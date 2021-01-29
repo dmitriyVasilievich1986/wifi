@@ -1,0 +1,281 @@
+/* #region term text and dialog list css here */
+.term {
+    text-align: left;
+}
+.dialog-head {
+    justify-content: space-between;
+    line-height: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+/* #endregion term text and dialog list css here */
+
+/* #region buttons css here */
+button:focus {
+    outline: none;
+}
+.send.enable{
+    margin-top: 2rem;
+    cursor: pointer;
+    box-shadow: 0px 5px 0px #e5a535;
+    border-radius: 25px;
+    border: 2px solid #fcbf49;
+    color: black;
+    background-color: #fcbf49;
+    width: 100%;
+}
+.send.disable {
+    margin-top: 2rem;
+    border-radius: 25px;
+    border: 2px solid #cccccc;
+    color: #cccccc;
+    background-color: white;
+    width: 100%;
+}
+.accept-button {
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0px 3px 0px #e5a535;
+    border-radius: 25px;
+    border: 2px solid #fcbf49;
+    color: black;
+    background-color: #fcbf49;
+}
+/* #endregion buttons css here */
+
+/* #region main form container css here */
+.form-logo  {
+    display: none;
+}
+.main {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 7rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+}
+/* #endregion main container */
+
+/* #region footer css here */
+.footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 0;
+    background-color: #333533;
+    color: #ccc;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+}
+.footer-link {
+    color: #cccccc;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* #endregion footer css here */
+
+/* #region fonts settings here */
+body {
+    font: 400 15px/1.4 Officina Serif, sans-serif;
+}
+p {
+    text-align: center;
+}
+a {
+    margin-left: 1rem;
+}
+h3 {
+    text-align: center;
+}
+.link {
+    margin-left: 5px;
+    border-bottom: 2px dashed gray;
+    cursor: pointer;
+}
+.error-link {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px dashed gray;
+    cursor: pointer;
+}
+/* #endregion fonts settings here */
+
+/*#region all css for header, down here */
+.header {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 0 1rem;
+    border-bottom: 1px solid;
+}
+.logo {
+    width: 100px;
+    height: 2rem;
+    content: url(/sf/cert_auth/i/logo.png);
+}
+.language.enable {
+    margin-top: 4px;
+    cursor: pointer;
+    padding: 3px;
+    box-shadow: 0px -3px 0px #e5a535;
+    border-radius: 25px;
+    width: 4rem;
+    border: 2px solid #fcbf49;
+    color: black;
+    background-color: #fcbf49;
+}
+.language.disable {
+    margin-top: 4px;
+    cursor: pointer;
+    width: 4rem;
+    border: 0;
+    color: black;
+    background-color: transparent;
+}
+/*#endregion all css for header, down hear */
+
+/* #region different containers css here */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 540px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col {
+    max-width: 540px;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+/* #endregion different containers css here */
+
+/* #region select input css here */
+select {
+    cursor: pointer;
+    height: 2rem;
+    padding-left: 1rem;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: 100%;
+}
+option {
+    line-height: 2rem;
+}
+/* #endregion select input css here */
+
+/* #region checkbox acceptance css here */
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+}
+input[type="checkbox"]:checked + label:before {
+    border: none;
+    border: 1px solid #e5a535;
+    background-color: #e5a535;
+}
+input[type="checkbox"]:not(:checked) + label:before {
+    border: 1px solid gray;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    border-radius: 2px;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+/* #endregion checkbox acceptance css here */

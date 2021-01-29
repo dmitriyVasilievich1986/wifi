@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block main_body %}
+<div class="container mt-4 mb-4">
+    <form method="post" class="form-group border rounded-lg border-dark mt-4 container p-4"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        <select name="mode" id="new_data" class="w-100" onchange="changeNewData(this)">
+            <option>cert</option>
+            <option>fias</option>
+            <option>free</option>
+            <option>tariff</option>
+        </select>
+        <div class="mt-4">
+            <label>Приветсвие на английском языке</label>
+            <input type="text" name="greeten" class="w-100">
+        </div>
+        <div class="mt-4">
+            <label>Приветсвие на русском языке</label>
+            <input type="text" name="greetru" class="w-100">
+        </div>
+        <div class="mt-4">
+            <label>Условия на английском языке</label>
+            <input type="text" name="termen" class="w-100">
+        </div>
+        <div class="mt-4">
+            <label>Условия на русском языке</label>
+            <input type="text" name="termru" class="w-100">
+        </div>
+        <div class="mt-4" id="lang">
+            <select name="lang" id="language" style="width: 10rem;">
+                <option>ru</option>
+                <option>en</option>
+            </select>
+        </div>
+        <div class="mt-4" id="err">
+            <select name="error" id="error" style="width: 10rem;">
+                <option></option>
+                <option>db</option>
+                <option>nomac</option>
+                <option>timeout</option>
+                <option>invalid_zone</option>
+                <option>invalid_data</option>
+                <option>invalid_surname</option>
+                <option>invalid_certificate</option>
+                <option>certificate_expired</option>
+                <option>invalid_room_number</option>
+                <option>invalid_reservation</option>
+            </select>
+        </div>
+        <div class="mt-4" id="room">
+            <label>Room number</label>
+            <input type="checkbox" name="room" checked="on">
+        </div>
+        <div class="mt-4" id="surname">
+            <label>Surname</label>
+            <input type="checkbox" name="surname" checked="on">
+        </div>
+        <div class="mt-4" id="reservation">
+            <label>Reservation</label>
+            <input type="checkbox" name="reservation" checked="on">
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-sm btn-primary">Next</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const lang = document.getElementById('lang')
+    const someError = document.getElementById('err')
+    const roomNumber = document.getElementById('room')
+    const surName = document.getElementById('surname')
+    const reservation = document.getElementById('reservation')
+
+    function changeNewData(newData) {
+        if (newData.value == "sert" || newData.value == "fias") {
+            if (newData.value == "fias") {
+                roomNumber.className = 'mt-4'
+                surName.className = 'mt-4'
+                reservation.className = 'mt-4'
+            } else {
+                roomNumber.className = 'd-none'
+                reservation.className = 'd-none'
+                surName.className = 'd-none'
+            }
+            lang.className = 'mt-4'
+            someError.className = 'mt-4'
+        } else {
+            roomNumber.className = 'd-none'
+            reservation.className = 'd-none'
+            surName.className = 'd-none'
+            lang.className = 'd-none'
+            someError.className = 'd-none'
+        }
+    }
+</script>
+{% endblock %}

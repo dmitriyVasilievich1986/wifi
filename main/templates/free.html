@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sf/cert_auth/css/style.css" type="text/css">
+</head>
+
+{% block main_body %}
+<div id="app"></div>
+{% endblock %}
+
+{% block meta %}
+<title>
+    {% if title %}
+    {{ title }}
+    {% else %}
+    Beeline WiFi
+    {% endif %}
+</title>
+{% endblock meta %}
+
+{% block scripts %}
+<script>
+    const tariff = '{{ tariffes }}'
+    const data = {
+        language: "{{ lang | safe }}",
+        error: "{{ error | safe }}",
+        mode: "{{ mode | safe }}",
+        year: "{{ year | safe }}",
+        data: "{{ data | safe }}"
+    }
+    const fiasColumns = {
+        'roomNumber': true,
+        'surnameText': true,
+        'reservationText': true,
+    }
+</script>
+<script src="/sf/cert_auth/js/errorList.js"></script>
+<script src="/sf/cert_auth/js/componentsText/tariffComponent.js"></script>
+<script src="/sf/cert_auth/js/componentsText/fiasComponentText.js"></script>
+<script src="/sf/cert_auth/js/componentsText/certComponentText.js"></script>
+<script src="/sf/cert_auth/js/componentsText/termComponentText.js"></script>
+<script src="/sf/cert_auth/js/main.js"></script>
+{% endblock %}
