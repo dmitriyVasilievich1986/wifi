@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import handleText from '../handleText'
 
-import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
@@ -22,12 +20,6 @@ class Tariff extends Component {
     render() {
         return (
             <div>
-                {/* <select
-                    onChange={e => this.setState({ selectedTariff: e.target.value })}
-                    value={this.state.selectedTariff}>
-                    {this.state.tariffes.map((t, i) => <option key={i}>{t}</option>)}
-                </select> */}
-
                 <FormControl style={{ width: "100%" }}>
                     <InputLabel id="demo-simple-select-label">{handleText(tariffComponent.tariffLable, this.props.language)}</InputLabel>
                     <Select
